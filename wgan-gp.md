@@ -179,19 +179,19 @@ while θ not converged:
     ║    Sample z ~ p(z)           (noise)              ║
     ║    Sample ε ~ U[0,1]                              ║
     ║                                                   ║
-    ║    x̃ ← G_θ(z)               (fake sample)        ║
-    ║    x̂ ← ε·x + (1-ε)·x̃       (interpolated)       ║
+    ║    x̃ ← G_θ(z)               (fake sample)         ║
+    ║    x̂ ← ε·x + (1-ε)·x̃       (interpolated)         ║
     ║                                                   ║
-    ║    L⁽ⁱ⁾ ← D_w(x̃) - D_w(x)                       ║
-    ║         + λ·(‖∇_{x̂} D_w(x̂)‖₂ - 1)²             ║
+    ║    L⁽ⁱ⁾ ← D_w(x̃) - D_w(x)                         ║
+    ║         + λ·(‖∇_{x̂} D_w(x̂)‖₂ - 1)²                ║
     ║  end                                              ║
     ║                                                   ║
-    ║  w ← Adam(∇_w mean(L), w, α, β₁, β₂)            ║
+    ║  w ← Adam(∇_w mean(L), w, α, β₁, β₂)              ║
     ╚═══════════════════════════════════════════════════╝
 
-    ╔══ Generator update ════════════════════════════════╗
-    ║  Sample {z⁽ⁱ⁾} ~ p(z)                            ║
-    ║  θ ← Adam(∇_θ mean(-D_w(G_θ(z))), θ, α, β₁, β₂) ║
+    ╔══ Generator update ═══════════════════════════════╗
+    ║  Sample {z⁽ⁱ⁾} ~ p(z)                             ║
+    ║  θ ← Adam(∇_θ mean(-D_w(G_θ(z))), θ, α, β₁, β₂)   ║
     ╚═══════════════════════════════════════════════════╝
 ```
 
